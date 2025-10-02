@@ -16,7 +16,7 @@ module "lambda" {
   source       = "./terraform_lambda"
   
   function_name = "my-container-lambda"
-  image_uri     = "111122223333.dkr.ecr.us-east-2.amazonaws.com/app-10:latest"
+  image_uri     = "111122223333.dkr.ecr.us-east-1.amazonaws.com/app-10:latest"
   
   # Optional parameters
   memory_size   = 256
@@ -39,7 +39,7 @@ module "lambda" {
 | timeout | Timeout for the Lambda function (in seconds) | number | 30 |
 | environment_variables | Environment variables for the Lambda function | map(string) | {} |
 | log_retention_days | Number of days to retain Lambda logs | number | 14 |
-| region | AWS region | string | "us-east-2" |
+| region | AWS region | string | "us-east-1" |
 | create_function_url | Whether to create a function URL for the Lambda | bool | false |
 
 ## Outputs
