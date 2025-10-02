@@ -6,7 +6,6 @@ resource "aws_lambda_function" "container_lambda" {
   image_uri                      = var.image_uri
   memory_size                    = var.memory_size
   timeout                        = var.timeout
-  # reserved_concurrent_executions = var.reserved_concurrency
   kms_key_arn                    = aws_kms_key.encrypt_lambda_environments.arn
   logging_config {
     log_format       = "JSON"
