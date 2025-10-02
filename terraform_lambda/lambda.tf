@@ -1,12 +1,13 @@
 #https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/lambda_function
 resource "aws_lambda_function" "container_lambda" {
-  function_name                  = "${var.name}-lambda"
-  role                           = aws_iam_role.lambda_role.arn
-  package_type                   = "Image"
-  image_uri                      = var.image_uri
-  memory_size                    = var.memory_size
-  timeout                        = var.timeout
-  kms_key_arn                    = aws_kms_key.encrypt_lambda_environments.arn
+  function_name = "${var.name}-lambda"
+  role          = aws_iam_role.lambda_role.arn
+  package_type  = "Image"
+  image_uri     = var.image_uri
+  memory_size   = var.memory_size
+  timeout       = var.timeout
+  # reserved_concurrent_executions = var.reserved_concurrency
+  kms_key_arn = aws_kms_key.encrypt_lambda_environments.arn
   logging_config {
     log_format       = "JSON"
     log_group        = aws_cloudwatch_log_group.lambda_log.name
