@@ -48,8 +48,8 @@ variable "log_retention_days" {
   type        = number
   default     = 365
 }
-variable "reserved_concurrency" {
-  description = "Reserved concurrent executions for the Lambda function"
-  type        = number
-  default     = 2
-}
+# variable "reserved_concurrency" {
+#   description = "Reserved concurrent executions for the Lambda function"
+#   type        = number
+#   default     = 2
+# }
