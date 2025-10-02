@@ -51,5 +51,5 @@ variable "log_retention_days" {
 variable "reserved_concurrency" {
   description = "Reserved concurrent executions for the Lambda function"
   type        = number
-  default     = 100
+  default     = 10
 }
