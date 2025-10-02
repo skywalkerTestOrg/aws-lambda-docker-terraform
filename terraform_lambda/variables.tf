@@ -2,7 +2,7 @@
 variable "region" {
   description = "Infrastructure region"
   type        = string
-  default     = "us-east-2"
+  default     = "us-east-1"
 }
 #Define IAM User Access Key
 variable "access_key" {
@@ -48,8 +48,8 @@ variable "log_retention_days" {
   type        = number
   default     = 365
 }
-# variable "reserved_concurrency" {
-#   description = "Reserved concurrent executions for the Lambda function"
-#   type        = number
-#   default     = 2
-# }
+variable "reserved_concurrency" {
+  description = "Reserved concurrent executions for the Lambda function"
+  type        = number
+  default     = 10
+}

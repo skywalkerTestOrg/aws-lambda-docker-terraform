@@ -44,7 +44,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.IAM_ROLE }}
         role-session-name: AWSSession
-        aws-region: us-east-2
+        aws-region: us-east-1
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
@@ -212,7 +212,7 @@ jobs:
         working-directory: ./lambda_src
     env:
       ECR_REPOSITORY: ${{ needs.ecr_create.outputs.repository_name }}
-      AWS_REGION: us-east-2
+      AWS_REGION: us-east-1
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -317,7 +317,7 @@ jobs:
       with:
         role-to-assume: ${{ secrets.IAM_ROLE }}
         role-session-name: AWSSession
-        aws-region: us-east-2
+        aws-region: us-east-1
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
